@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>toString method</h2>
+ <p id="example1"></p>
+ <p id="example2"></p>
+ <p id="example3"></p>
+ 
+    <script>
+      // first example:
+
+        let x=123;
+        document.getElementById("example1").innerHTML =
+  x.toString() + "<br>" +
+   (123).toString() + "<br>" +
+   (100 + 23).toString();
+
+  //     output : 123
+  //              123
+  //              123
+
+
+// second example:
+
+   function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.toString = function() {
+  return `Person { name: ${this.name}, age: ${this.age} }`;
+};
+
+const person = new Person('John Doe', 25);
+document.getElementById("example2").innerHTML=(person.toString());
+
+    // output: Person { name: John Doe, age: 25 }
+
+    // third example
+    const numbers = [1, 2, 3, 4, 5];
+    document.getElementById("example3").innerHTML=(numbers.toString()); 
+
+// output:"1,2,3,4,5"
+
+    </script>
+  </body>
+</html>
